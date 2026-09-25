@@ -210,7 +210,7 @@ ACTIONS.adminLogin = async (sb, payload) => {
   const { data: a } = await sb.from("admin_config").select("*").eq("id", true).maybeSingle();
   if (!a || payload.identifiant !== a.identifiant) fail("Identifiant ou mot de passe incorrect.", "auth");
   if (hashPassword(payload.motDePasse, a.salt) !== a.password_hash) fail("Identifiant ou mot de passe incorrect.", "auth");
-  const token = await createSession(sb, "admin", "admin");
+  const token = await createSession(sb, null, "admin");
   return { token, profileSummary: { identifiant: a.identifiant } };
 };
 
