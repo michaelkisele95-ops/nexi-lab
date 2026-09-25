@@ -1,0 +1,16 @@
+{
+  "name": "nexi-lab",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Nexi Lab — PWA gamifiée chimie & métallurgie (NEXI ACADEMY), backend Supabase",
+  "scripts": {
+    "test": "node test/logic-core.test.js && node test/proxy-actions.test.js",
+    "setup:admin": "node scripts/setup-admin.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2",
+    "dotenv": "^16",
+    "ws": "^8.21.3"
+  },
+  "license": "UNLICENSED"
+}
